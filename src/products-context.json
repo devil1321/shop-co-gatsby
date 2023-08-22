@@ -1,0 +1,68 @@
+{
+    "products":[
+        {
+            "name":"T-shirt with Tape Details",
+            "img_name":"product-1.png",
+            "img_src":"./assets/product-1.png",
+            "rating":4.5,
+            "price":120,
+            "prev_price":0
+        },
+        {
+            "name":"Skinny Fit Jeans",
+            "img_name":"product-2.png",
+            "img_src":"./assets/product-2.png",
+            "rating":3.5,
+            "price":240,
+            "prev_price":260
+        },
+        {
+            "name":"Checkered Shirt",
+            "img_name":"product-3.png",
+            "img_src":"./assets/product-3.png",
+            "rating":4.5,
+            "price":180,
+            "prev_price":0
+        },
+        {
+            "name":"Sleeve Striped T-shirt",
+            "img_name":"product-4.png",
+            "img_src":"./assets/product-4.png",
+            "rating":4.5,
+            "price":130,
+            "prev_price":160
+        },
+        {
+            "name":"Vertical Striped Shirt",
+            "img_name":"product-5.png",
+            "img_src":"./assets/product-5.png",
+            "rating":5,
+            "price":212,
+            "prev_price":232
+        },
+        {
+            "name":"Courage Graphic T-shirt",
+            "img_name":"product-6.png",
+            "img_src":"./assets/product-6.png",
+            "rating":4,
+            "price":145,
+            "prev_price":0
+        },
+        {
+            "name":"Loose Fit Bermuda Shorts",
+            "img_name":"product-7.png",
+            "img_src":"./assets/product-7.png",
+            "rating":3,
+            "price":80,
+            "prev_price":0
+        },
+        {
+            "name":"Faded Skinny Jeans",
+            "img_name":"product-8.png",
+            "img_src":"./assets/product-8.png",
+            "rating":4.5,
+            "price":210,
+            "prev_price":0
+        }
+    ]
+}
