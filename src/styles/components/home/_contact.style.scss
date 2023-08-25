@@ -1,0 +1,47 @@
+.home__contact{
+    margin:0px 0px 50px;
+    padding:30px 50px;
+    background-color: #000000;
+    border-radius: 25px;
+    position: relative;
+    top:0px;
+    left:0px;
+    z-index: 2;
+    @include flex(row,space-between,center,null);
+    h2{
+        color: white;
+        width: 40%;
+    }
+    &-form{
+        width: 20%;
+        margin-right: 40px;
+    }
+    &-field{
+        padding:10px 20px;
+        background-color: #FFFFFF;
+        border-radius: 25px;
+        width: 100%;
+        @include flex(row,flex-start,center,null);
+        svg{
+            margin-right: 10px;
+            color:lightgray;
+        }
+        input{
+            width: 80%;
+            background: transparent;
+            outline: none;
+            border:0px;
+            &:focus,&:active{
+                outline: none;
+                border:0px;
+            }
+        }
+    }
+    &-btn{
+        margin-top: 10px;
+        padding:10px 20px;
+        background-color: #FFFFFF;
+        border-radius: 25px;
+        width: 119%;
+    }
+}

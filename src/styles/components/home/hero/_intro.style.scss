@@ -1,0 +1,25 @@
+.home__hero-intro{
+    width:50%;
+    padding-top:100px;
+    margin-left:90px;
+    &-title{
+        width:55%;
+    }
+    &-desc{
+        width:110%;
+    }
+    &-btn{
+        margin:20px 0px;
+        width:200px;
+        padding:10px;
+        color:white;
+        background-color:black;
+        border-radius:25px;
+        border:0px;
+        outline:none;
+        &:active,&:focus{
+            border:0px;
+            outline:none;
+        }
+    }
+}

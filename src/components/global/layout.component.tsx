@@ -1,5 +1,9 @@
 import React from 'react'
 import Seo from './seo.component';
+import Nav from './nav.component';
+import Footer from './footer.component';
+import '../../styles/style.scss'
+import 'font-awesome/css/font-awesome.css'
 
 interface LayoutProps {
     className:string;
@@ -13,10 +17,12 @@ interface LayoutProps {
 const Layout:React.FC<LayoutProps> = ({className,title,meta,lang,children}) => {
   return (
     <div className={className}>
-      <Seo title={`Shop | ${title}`} meta={meta} lang={lang} />
+      <Seo title={`${title}`} meta={meta} lang={lang} />
+      <Nav />
       <main>
         {children}
       </main>
+      <Footer />
     </div>
   )
 }

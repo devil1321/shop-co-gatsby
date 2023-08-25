@@ -1,0 +1,13 @@
+.home__browse{
+    h2{
+        margin:50px 0px;
+        text-align: center;
+        font-size: pxToRem(40);
+    }
+    padding:40px;
+    border-radius: 25px;
+    background-color: #F0F0F0;
+    &-items{
+        @include flex(row,space-between,center,wrap);
+    }
+}

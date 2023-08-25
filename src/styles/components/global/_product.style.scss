@@ -1,0 +1,30 @@
+.product{
+    width: calc(25% - 40px);
+    margin:20px;
+    &__img{
+        overflow: hidden;
+        border-radius: 25px;
+        height: 300px;
+    }
+    svg{
+        width: 20px;
+        height: 20px;
+        color:yellow;
+    }
+    &__rating{
+        position: relative;
+        top:0px;
+        left:0px;
+        span{
+            margin-left: 10px;
+        }
+    }
+    &__rating-mask{
+        position: absolute;
+        top:0px;
+        left:-20px;
+        background-color: white;
+        width: 10px;
+        height: 20px;
+    }
+}

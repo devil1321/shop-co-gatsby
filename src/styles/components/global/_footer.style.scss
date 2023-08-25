@@ -1,0 +1,53 @@
+.footer{
+    position: relative;
+    top:0px;
+    left:50%;
+    z-index: 1;
+    transform: translate(-50%,0px);
+    margin-top: -10%;
+    width: calc(100% + 100px);
+    box-sizing: border-box;
+    padding: 150px 50px 50px;
+    background-color: #F0F0F0;
+    @include flex(row,space-between,flex-start,null);
+    &__col{
+        width: calc((70% / 4));
+        &:first-of-type{
+            width: 30%;
+            p{
+                margin-bottom: 20px;
+                width: 90%;
+                color:lightgray;
+            }
+        }
+        h2{
+            font-size: pxToRem(16);
+        }
+        a{
+            cursor: pointer;
+            display: block;
+            margin: 20px 0px;
+            color: lightgray;
+            &:hover{
+                text-decoration: underline;
+            }
+        }
+    }
+    &__col-title{
+        margin:30px 0px;
+    }
+    &__icons{
+        margin-top: 10px;
+        @include flex(row,space-between,center,null);
+        width: 150px;
+        svg{
+            cursor: pointer;
+            color:lightgray;
+            width: 30px;
+            height: 30px;
+            &:hover{
+                color:gray;
+            }
+        }
+    }
+}

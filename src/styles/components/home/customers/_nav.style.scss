@@ -1,0 +1,7 @@
+.home__customers-nav{
+    margin:50px 0px;
+    @include flex(row,space-between,center,null);
+    svg{
+        margin:0px 20px;
+    }    
+}

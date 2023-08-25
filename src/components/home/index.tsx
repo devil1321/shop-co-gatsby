@@ -1,9 +1,11 @@
-import Hero from "./hero.component";
-import Browse from "./browse.component";
-import Product from "./product.component";
+import Hero from "./hero/hero.component";
+import Browse from "./browse/browse.component";
+import Customers from "./customers/customers.component";
+import Contact from "./contact.component";
 
 export const HomeComponents = {
     Hero,
     Browse,
-    Product
+    Customers,
+    Contact
 }

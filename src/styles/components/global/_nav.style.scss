@@ -1,0 +1,46 @@
+.nav{
+    height: 60px;
+    @include flex(row,space-between,center,null);
+    svg{
+        width: 20px;
+        height: 20px;
+    }
+    &__menu{
+        width: 300px;
+        @include flex(row,space-between,center,null);
+        svg{
+            margin-left: 5px;
+            width: 10px;
+            height: 10px;
+        }
+    }
+    &__menu-item{
+        @include flex(row,space-between,center,null);
+    }
+    &__search{
+        margin-right: 100px;
+        width: 40%;
+        background-color: rgb(241, 241, 241);
+        border-radius: 25px;
+        padding: 5px;
+        input{
+            padding: 5px 10px;
+            width: 80%;
+            background: transparent;
+            &::placeholder{
+                color:rgb(180, 180, 180);
+                font-style:italic;
+            }
+            border: 0px;
+            outline: none;
+            &:focus,&:active{
+                border: 0px;
+                outline: none;
+            }
+        }
+    }
+    &__menu-icons{
+        width: 50px;
+        @include flex(row,space-between,center,null);
+    }
+}

@@ -1,0 +1,45 @@
+.home__hero{
+    &-inner-wrapper{
+        background-color: #F2F0F1;
+        height: calc(100vh - 60px);
+        position:relative;
+        top:0px;
+        left:50%;
+        transform: translate(-50%);
+        width: calc(100% + 100px);
+        @include flex(row,space-between,center,null);
+    }
+    &-counts{
+        width: 550px;
+        position: absolute;
+        left:90px;
+        top:480px;
+        @include flex(row,space-between,center,null);
+    }
+    &-vect-1,&-vect-2{
+        position: absolute;
+        z-index: 10;
+        top:0px;
+        right:0px;
+    }
+    &-vect-1{
+        right:180px;
+        top:100px;
+    }
+    &-vect-2{
+        right:550px;
+        top:300px;
+        img{
+            width: 70%;
+        }
+    }
+    &-img{
+        width: 50%;
+        img{
+            position:relative;
+            left:-90%;
+            top:-350px;
+            width: 180%;
+        }
+    }
+}

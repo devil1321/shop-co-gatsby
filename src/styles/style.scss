@@ -1,0 +1,23 @@
+@import './fonts';
+@import './variables';
+@import './mixins';
+@import './global';
+
+
+@import './components/global/nav.style';
+@import './components/global/footer.style';
+@import './components/global/product.style';
+@import './components/global/products-section.style';
+
+@import './components/home/hero/count.style';
+@import './components/home/hero/intro.style';
+@import './components/home/hero/footer.style';
+@import './components/home/hero/hero.style';
+@import './components/home/browse/browse.style';
+@import './components/home/browse/browse-item.style';
+@import './components/home/customers/nav.style';
+@import './components/home/customers/item.style';
+@import './components/home/customers/customers.style';
+@import './components/home/contact.style';
+
+@import './pages/home.style';
