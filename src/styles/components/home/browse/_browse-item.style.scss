@@ -2,9 +2,15 @@
     margin:10px;
     &.sm{
         width: calc(30% - 20px);
+        @include breakpoint-down(small){
+            width: 100%;
+        }
     }
     &.lg{
         width: calc(70% - 20px);
+        @include breakpoint-down(small){
+            width: 100%;
+        }
     }
     &-img{
         position: relative;
@@ -13,6 +19,9 @@
         overflow: hidden;
         height: 220px;
         border-radius: 25px;
+        @include breakpoint-down(small){
+            height: 100px;
+        }
         h3{
             position: absolute;
             top:20px;

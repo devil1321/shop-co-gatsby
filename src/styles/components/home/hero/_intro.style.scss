@@ -2,11 +2,23 @@
     width:50%;
     padding-top:100px;
     margin-left:90px;
+    @include breakpoint-down(small){
+        width: 100%;
+        padding: 0px;
+        margin: 0px;
+    }
     &-title{
         width:55%;
+        @include breakpoint-down(small){
+            width: 80%;
+        }
+        @media (max-width:1000px) and (max-height:500px) and (orientation:landscape){
+            width: 100%;
+        }
     }
     &-desc{
         width:110%;
+        color:rgba(#000000,0.6)
     }
     &-btn{
         margin:20px 0px;
@@ -20,6 +32,9 @@
         &:active,&:focus{
             border:0px;
             outline:none;
+        }
+        @include breakpoint-down(small){
+            width: 100%;
         }
     }
 }

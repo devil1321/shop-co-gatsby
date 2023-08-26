@@ -1,3 +1,4 @@
+// @ts-ignore
 import { products } from './src/products-context'
 const path = require('path')
 // @ts-ignore
@@ -10,7 +11,7 @@ exports.createPages = async ({ actions, graphql }) => {
         // @ts-ignore
         component: path.resolve('./src/pages-templates/details.template.tsx'), // Path to your DetailsTemplate component
         context: {
-          id,  // Pass any additional data you need to the template
+          p,  // Pass any additional data you need to the template
         },
       });
     });

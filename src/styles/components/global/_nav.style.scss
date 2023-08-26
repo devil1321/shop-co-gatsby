@@ -1,18 +1,67 @@
 .nav{
+    position: relative;
+    top:0px;
+    left:0px;
     height: 60px;
     @include flex(row,space-between,center,null);
+    h1{
+        @include breakpoint-down(small){
+            transform: translateX(-20px);
+        }
+        @media (max-width:1024px) and (max-height:600px) and (orientation:landscape){
+            margin-right: auto;
+            margin-left: 20px;
+        }
+    }
     svg{
         width: 20px;
         height: 20px;
     }
+    &__hamburger{
+        display: none;
+        @include breakpoint-down(small){
+            display: block;
+        }
+        @media (max-width:1024px) and (max-height:600px){
+            display: block;
+        }
+    }
     &__menu{
         width: 300px;
         @include flex(row,space-between,center,null);
+        @include breakpoint-down(small){
+            position: absolute;
+            top:70px;
+            left:50%;
+            z-index: 10;
+            transform: translateX(-50%);
+            background-color: #fff;
+            display: none;
+            &-item{
+                margin:10px 0px;
+            }
+        }
+        @media (max-width:1024px) and (max-height:600px) and (orientation:landscape){
+            position: absolute;
+            top:70px;
+            left:50%;
+            z-index: 10;
+            width: 100%;
+            transform: translateX(-50%);
+            background-color: #fff;
+            display: none;
+            &-item{
+                margin:10px 0px;
+            }
+        }
         svg{
             margin-left: 5px;
             width: 10px;
             height: 10px;
         }
+    }
+    &__menu--open{
+        @include flex(column,center,center,null);
     }
     &__menu-item{
         @include flex(row,space-between,center,null);
@@ -23,6 +72,23 @@
         background-color: rgb(241, 241, 241);
         border-radius: 25px;
         padding: 5px;
+        @include breakpoint-down(medium){
+            margin-right: 0px;
+        }
+        @include breakpoint-down(small){
+            display: none;
+            position: absolute;
+            top:10px;
+            left:0px;
+            width: 100%;
+        }
+        @media (max-width:1024px) and (max-height:600px) and (orientation:landscape){
+            display: none;
+            position: absolute;
+            top:10px;
+            left:30%;
+            width:50%;
+        }
         input{
             padding: 5px 10px;
             width: 80%;
@@ -39,8 +105,44 @@
             }
         }
     }
+    &__search--open{
+        display: block;
+    }
+    &__search-cross{
+        display: none;
+        position: relative;
+        top:3px;
+        left:10px;
+        color:lightgray;
+        @include breakpoint-down(small){
+            display: inline-block;
+        }
+        @media (max-width:1024px) and (max-height:600px) and (orientation:landscape){
+            display: inline-block;
+            transform: translateX(40px);
+            position: relative;
+            z-index: 10;
+            top:3px;
+            left:10px;
+        }
+    }
     &__menu-icons{
-        width: 50px;
-        @include flex(row,space-between,center,null);
+        @include flex(row,flex-start,center,null);
+        svg{
+            margin:0px 10px;
+        }
+    }
+    &__search-icon{
+        display: none;
+        @include breakpoint-down(small){
+            display: inline-block;
+        }
+        @media (max-width:1024px) and (max-height:600px) and (orientation:landscape){
+            display: inline-block;
+            position: relative;
+            z-index: 10;
+            top:0px;
+            left:0px;
+        }
     }
 }

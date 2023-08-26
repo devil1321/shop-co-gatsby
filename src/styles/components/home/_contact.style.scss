@@ -8,13 +8,22 @@
     left:0px;
     z-index: 2;
     @include flex(row,space-between,center,null);
+    @include breakpoint-down(small){
+        @include flex(column,flex-start,flex-start,wrap);
+    }
     h2{
         color: white;
         width: 40%;
+        @include breakpoint-down(small){
+            width: 100%;
+        }
     }
     &-form{
         width: 20%;
         margin-right: 40px;
+        @include breakpoint-down(small){
+            width: 100%;
+        }
     }
     &-field{
         padding:10px 20px;
@@ -22,6 +31,13 @@
         border-radius: 25px;
         width: 100%;
         @include flex(row,flex-start,center,null);
+        @include breakpoint-down(small){
+            margin-top: 20px;
+            width: 85%;
+        }
+        @include breakpoint-down-l(medium){
+            width: 92.5%;
+        }
         svg{
             margin-right: 10px;
             color:lightgray;
@@ -31,6 +47,7 @@
             background: transparent;
             outline: none;
             border:0px;
+           
             &:focus,&:active{
                 outline: none;
                 border:0px;
@@ -43,5 +60,8 @@
         background-color: #FFFFFF;
         border-radius: 25px;
         width: 119%;
+        @include breakpoint-down(small){
+            width: 100%;
+        }
     }
 }

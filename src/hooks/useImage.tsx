@@ -24,7 +24,7 @@ const useImage = (name:string) => {
       allFile {
         nodes {
           childImageSharp {
-            gatsbyImageData(formats: WEBP, placeholder: BLURRED, layout: FULL_WIDTH)
+            gatsbyImageData(formats: WEBP, placeholder: BLURRED, layout: CONSTRAINED)
           }
           name
         }

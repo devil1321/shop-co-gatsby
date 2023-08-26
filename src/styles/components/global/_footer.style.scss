@@ -10,10 +10,19 @@
     padding: 150px 50px 50px;
     background-color: #F0F0F0;
     @include flex(row,space-between,flex-start,null);
+    @include breakpoint-down(small){
+        @include flex(row,space-between,flex-start,wrap);
+    }
     &__col{
         width: calc((70% / 4));
+        @include breakpoint-down(small){
+            width: 50%;
+        }
         &:first-of-type{
             width: 30%;
+            @include breakpoint-down(small){
+                width: 100%;
+            }
             p{
                 margin-bottom: 20px;
                 width: 90%;

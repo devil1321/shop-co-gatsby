@@ -4,6 +4,7 @@ import Nav from './nav.component'
 import Footer from "./footer.component";
 import Product from "./product.component";
 import ProductSection from "./products-section.component";
+import Breadcrumb from "./breadcrumb.component";
 
 export const GlobalComponents = {
     Seo,
@@ -11,5 +12,6 @@ export const GlobalComponents = {
     Footer,
     Layout,
     Product,
-    ProductSection
+    ProductSection,
+    Breadcrumb
 }

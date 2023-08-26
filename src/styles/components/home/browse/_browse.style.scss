@@ -7,6 +7,9 @@
     padding:40px;
     border-radius: 25px;
     background-color: #F0F0F0;
+    @include breakpoint-down(small){
+        padding: 40px 10px;
+    }
     &-items{
         @include flex(row,space-between,center,wrap);
     }

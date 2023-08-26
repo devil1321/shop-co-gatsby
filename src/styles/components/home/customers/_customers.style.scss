@@ -1,4 +1,7 @@
 .home__customers{
+    &-icons{
+        @include flex(row,flex-start,center,null);
+    }
     &-carousel{
         overflow: hidden;
         width: 100%;

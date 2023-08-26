@@ -8,6 +8,12 @@
         transform: translate(-50%);
         width: calc(100% + 100px);
         @include flex(row,space-between,center,null);
+        @include breakpoint-down(small){
+            display: block;
+            width: calc(100% + 20px);
+            box-sizing: border-box;
+            padding: 10px;
+        }
     }
     &-counts{
         width: 550px;
@@ -15,6 +21,14 @@
         left:90px;
         top:480px;
         @include flex(row,space-between,center,null);
+        @include breakpoint-down(small){
+            position: relative;
+            left:0px;
+            top:0px;
+            width: 100%;
+            @include flex(row,center,center,wrap);
+
+        }
     }
     &-vect-1,&-vect-2{
         position: absolute;
@@ -25,10 +39,32 @@
     &-vect-1{
         right:180px;
         top:100px;
+        @include breakpoint-down(medium){
+            display: none;
+        }
+        @include breakpoint-down(small){
+            display: block;
+            right:80%;
+            top:100%;
+        }
+        @include breakpoint-down-l(medium){
+            top:120%;
+        }
     }
     &-vect-2{
         right:550px;
         top:300px;
+        @include breakpoint-down(medium){
+            display: none;
+        }
+        @include breakpoint-down(small){
+            display: block;
+            right:10%;
+            top:85%;
+        }
+        @include breakpoint-down-l(medium){
+            top:120%;
+        }
         img{
             width: 70%;
         }
@@ -40,6 +76,38 @@
             left:-90%;
             top:-350px;
             width: 180%;
+        }
+    
+        @include breakpoint-down(small){
+            width: 100%;
+            img{
+                left:-110%;
+                top:-500px;
+                width: 220%;
+            }
+        }
+        @include breakpoint-down-l(medium){
+            img{
+                left:-110%;
+                top:-1020px;
+                width: 220%;
+            }
+        }
+        @media (max-width:1024px) and (max-height:600px) and (orientation:landscape){
+            transform: translateX(100px);
+            img{
+                left:-110%;
+                top:-380px;
+                width: 220%;
+            }
+        }
+        @media (max-width:1000px) and (max-height:500px) and (orientation:landscape){
+            transform: translateX(100px);
+            img{
+                left:-90%;
+                top:-200px;
+                width: 190%;
+            }
         }
     }
 }

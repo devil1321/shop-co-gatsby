@@ -3,5 +3,8 @@
     @include flex(row,space-between,center,null);
     svg{
         margin:0px 20px;
+        @include breakpoint-down(small){
+            margin: 0px 10px;;
+        }
     }    
 }

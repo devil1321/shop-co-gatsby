@@ -21,11 +21,24 @@ const Nav:React.FC<{title:string}> = ({title}) => {
     const items = document.querySelectorAll('.home__customers-item') as NodeListOf<HTMLDivElement>
     const item = document.querySelector('.home__customers-item') as HTMLDivElement
 
-    if(move < -view.clientWidth + ((items.length - 2) * (item.clientWidth + 40))){
-        setMove(0)
-    }
-    if(move > 0){
-        setMove(-view.clientWidth + ((items.length - 2) * (item.clientWidth + 40)))
+    
+   
+    if(typeof window !== undefined){
+      if(window.innerWidth < 768){
+        if(move < -view.clientWidth + item.clientWidth){
+          setMove(0)
+        }
+        if(move > 0){
+          setMove(-view.clientWidth)
+        }
+      }else{
+        if(move < -view.clientWidth + ((items.length - 2) * (item.clientWidth + 40))){
+          setMove(0)
+        }
+        if(move > 0){
+          setMove(-view.clientWidth + ((items.length - 2) * (item.clientWidth + 40)))
+        }
+      }
     }
     view.style.transform = `translate(${move}px)`
   }

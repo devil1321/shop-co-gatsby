@@ -16,13 +16,15 @@ interface LayoutProps {
 
 const Layout:React.FC<LayoutProps> = ({className,title,meta,lang,children}) => {
   return (
-    <div className={className}>
-      <Seo title={`${title}`} meta={meta} lang={lang} />
-      <Nav />
-      <main>
-        {children}
-      </main>
-      <Footer />
+    <div className="container">
+      <div className={className}>
+        <Seo title={`${title}`} meta={meta} lang={lang} />
+        <Nav />
+        <main>
+          {children}
+        </main>
+        <Footer />
+      </div>
     </div>
   )
 }
