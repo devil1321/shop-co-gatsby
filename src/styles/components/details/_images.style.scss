@@ -1,0 +1,5 @@
+.details__images{
+    width: 50%;
+    @include flex(row,space-between,center,null);
+    
+}

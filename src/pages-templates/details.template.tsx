@@ -5,13 +5,12 @@ import { DetailsComponents } from '../components/details'
 import { you_may_also_like } from '../details-context'
 
 const DetailsTemplate:React.FC<{pageContext:any}> = ({pageContext}) => {
-  const { id, name, img_name,img_src, rating, price,prevPrice } = pageContext.p
   return (
     <GlobalComponents.Layout title="Details" className='details' meta={[]}>
-        <GlobalComponents.Breadcrumb />
+        <GlobalComponents.Breadcrumb paths={['Home','Shop','Men','T-Shirt']}/>
         <div className="details__hero">
           <DetailsComponents.Images />
-          <DetailsComponents.Details />
+          <DetailsComponents.Details product={pageContext.p} />
         </div>
         <DetailsComponents.Tabs />
         <GlobalComponents.ProductSection data={you_may_also_like} start={0} end={4} title='You may also like' />

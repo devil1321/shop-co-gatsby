@@ -1,0 +1,123 @@
+.details__info{
+    box-sizing: border-box;
+    padding: 20px;
+    width: 50%;
+    p{
+        margin:10px 0px;
+    }
+    &-price,&-title{
+        margin: 10px 0px;
+        font-weight: bold;
+    }
+    &-rating{
+        margin:10px 0px;
+        position: relative;
+        top:0px;
+        left:0px;
+        svg{
+            color:yellow;
+        }
+        @include breakpoint-down(small){
+            font-size: pxToRem(12);
+            span{
+                position: relative;
+                top:-3px;
+                left:0px;
+            }
+        }
+        span{
+            margin-left: 10px;
+        }
+    }
+    &-rating-mask{
+        position: absolute;
+        top:0px;
+        left:-20px;
+        background-color: white;
+        width: 10px;
+        height: 20px;
+    }
+    &-colors{
+        @include flex(row,flex-start,center,null);
+       
+    }
+    &-color{
+        cursor: pointer;
+        height: 40px;
+        width: 40px;
+        border-radius: 100%;
+        margin-right:20px;
+        @include flex(row,center,center,null);
+        svg{
+            display: none;
+            color: white;
+        }
+        &.active{
+            svg{
+                display: block;
+            }
+        }
+        &:first-of-type{
+            background-color: #4F4631;
+        }
+        &:nth-of-type(2){
+            background-color: #314F4A;
+        }
+        &:last-of-type{
+            background-color: #31344F;
+        }
+    }
+    &-sizes{
+        @include flex(row,flex-start,center,wrap);
+        p{
+            width: 100%;
+        }
+    }
+    &-size{
+        cursor: pointer;
+        padding: 10px 20px;
+        color:grey;
+        margin-right: 20px;
+        border-radius: 25px;
+        background-color: lightgray;
+        &.active{
+            background-color: black;
+            color:white;
+        }
+    }
+    &-controls{
+        margin: 20px 0px;
+        @include flex(row,space-between,center,null);
+    }
+    &-quantity{
+        @include flex(row,flex-start,center,null);
+        div{
+            height: 40px;
+            width: 40px;
+            background-color: lightgray;
+            @include flex(row,center,center,null);
+            &:first-of-type{
+                border-top-left-radius: 25px;
+                border-bottom-left-radius: 25px;
+            }
+            &:last-of-type{
+                border-top-right-radius: 25px;
+                border-bottom-right-radius: 25px;
+            }
+        }
+    }
+    button{
+        cursor: pointer;
+        width: 70%;
+        height: 40px;
+        border-radius: 25px;
+        background-color: black;
+        color:white;
+        outline: none;
+        border:0px;
+        &:active,&:focus{
+            outline: none;
+            border:0px;
+        }
+    }
+}

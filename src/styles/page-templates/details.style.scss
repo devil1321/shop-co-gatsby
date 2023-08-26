@@ -1,3 +1,9 @@
 .details{
     padding:0px 50px;
+    .nav{
+        border-bottom: 1px solid lightgray;
+    }
+    &__hero{
+        @include flex(row,space-between,center,null);
+    }
 }

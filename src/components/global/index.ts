@@ -4,7 +4,7 @@ import Nav from './nav.component'
 import Footer from "./footer.component";
 import Product from "./product.component";
 import ProductSection from "./products-section.component";
-import Breadcrumb from "./breadcrumb.component";
+import Breadcrumb from "./path.component";
 
 export const GlobalComponents = {
     Seo,

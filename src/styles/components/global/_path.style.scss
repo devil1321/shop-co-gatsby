@@ -1,0 +1,20 @@
+.path{
+    margin:40px 0px;
+    @include flex(row,flex-start,center,null);
+    &__path{
+        svg{
+            position: relative;
+            top:-3px;
+            left:0px;
+            width: 10px;
+            height: 10px;
+            color:lightgray;
+            margin:0px 10px;
+        }
+        &:last-of-type{
+            svg{
+                display: none;
+            }
+        }
+    }
+}
