@@ -1,0 +1,24 @@
+.details__nav{
+    @include flex(row,center,center,null);
+    &-item{
+        cursor: pointer;
+        padding:20px 0px;
+        text-align: center;
+        width: 33.3%;
+        border-bottom: 1px solid lightgray;
+        position: relative;
+        top:0px;
+        left:0px;
+        &.active{
+            &::before{
+                content: '';
+                position: absolute;
+                bottom: -2px;
+                left:0px;
+                width: 100%;
+                border-radius: 25px;
+                border-bottom: 2px solid black;
+            }
+        }
+    }
+}

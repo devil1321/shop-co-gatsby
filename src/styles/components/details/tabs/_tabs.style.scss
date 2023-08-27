@@ -1,0 +1,5 @@
+.details__tabs{
+    &-tab-revs{
+        @include flex(row,center,flex-start,wrap);
+    }
+}
