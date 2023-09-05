@@ -35,12 +35,14 @@ const Details:React.FC<DetailsProps> = ({product}) => {
             return <FontAwesomeIcon icon={faStar} />
         }else if(r % rating === 0){
             const step = 20
-            const product = document.querySelector(`#details-${id}`) as HTMLDivElement
-            const mask = product?.querySelector('.details__info-rating-mask') as HTMLDivElement
-            if(mask){
+            if(typeof window !== undefined){
+              const product = document.querySelector(`#details-${id}`) as HTMLDivElement
+              const mask = product?.querySelector('.details__info-rating-mask') as HTMLDivElement
+              if(mask){
                 mask.style.left = step * r + - 9 + 'px'
+              }
+              return <FontAwesomeIcon icon={faStar} />
             }
-            return <FontAwesomeIcon icon={faStar} />
         }
     })
   }
