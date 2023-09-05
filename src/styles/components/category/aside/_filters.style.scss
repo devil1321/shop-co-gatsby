@@ -1,0 +1,8 @@
+.category__filters{
+
+}
+
+.category__filter{
+    margin:10px 0px;
+    @include flex(row,space-between,center,null);
+}

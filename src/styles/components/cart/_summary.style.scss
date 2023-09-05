@@ -1,0 +1,61 @@
+.cart__summary{
+    width: 35%;
+    padding:10px;
+    border:1px solid lightgray;
+    border-radius: 10px;
+    @include breakpoint-down(small){
+        width: 100%;
+    }
+    &-item{
+        margin:10px 0px;
+        @include flex(row,space-between,center,null);
+        p{
+            color:grey;
+        }
+    }
+    &-footer{
+        margin-bottom: 10px;
+        @include flex(row,space-between,center,null);
+    }
+    &-code{
+        @include flex(row,space-between,center,null);
+        button{
+            width: 25% !important;
+            padding:5px 20px !important;
+            color:white;
+            background-color: black;
+            border-radius: 25px;
+            border: 0px;
+        }
+    }
+    &-field{
+        width: 70%;
+        padding: 5px;
+        background-color: lightgray;
+        border-radius: 25px;
+        input{
+            background: transparent;
+            width: 70%;
+            border:0px;
+            outline: none;
+            &:active,&:focus{
+                border:0px;
+                outline: none;
+            }
+        }
+        svg{
+            color:gray;
+            margin:0px 10px;
+        }
+       
+    }
+    button{
+        margin:5px 0px;
+        width: 100%;
+        padding:10px 20px;
+        color:white;
+        background-color: black;
+        border-radius: 25px;
+        border: 0px;
+    }
+}

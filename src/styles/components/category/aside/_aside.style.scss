@@ -1,0 +1,22 @@
+.category__aside{
+    width: 20%;
+    padding:20px;
+    border-radius: 25px;
+    border: 1px solid lightgray;
+    &-aside-nav{
+        @include flex(row,space-between,center,null);
+    }
+    button{
+        width: 100%;
+        padding:10px 20px;
+        border-radius: 25px;
+        background-color: black;
+        color:white;
+        outline: none;
+        border:0px;
+        &:focus,&:active{
+            outline: none;
+            border:0px;
+        }
+    }
+}

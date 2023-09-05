@@ -1,5 +1,8 @@
 .details__review{
     width: calc(50% - 20px);
+    @include breakpoint-down(small){
+        width: 100%;
+    }
     h3{
         @include flex(row,flex-start,center,null);
         div{

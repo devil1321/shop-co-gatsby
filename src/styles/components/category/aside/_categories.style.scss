@@ -1,0 +1,9 @@
+.category__dress-style{
+    &-nav{
+        @include flex(row,space-between,center,null);
+    }
+    &-category{
+        margin:10px 0px;
+        @include flex(row,space-between,center,null);
+    }
+}

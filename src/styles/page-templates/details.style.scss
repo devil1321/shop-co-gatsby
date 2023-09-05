@@ -1,9 +1,15 @@
 .details{
     padding:0px 50px;
+    @include breakpoint-down(small){
+        padding: 0px 10px;
+    }
     .nav{
         border-bottom: 1px solid lightgray;
     }
     &__hero{
         @include flex(row,space-between,center,null);
+        @include breakpoint-down(small){
+            display: block;
+        }
     }
 }

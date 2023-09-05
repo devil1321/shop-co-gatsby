@@ -1,0 +1,12 @@
+.category{
+    padding: 0px 50px;
+    &__inner-wrapper{
+        @include flex(row,flex-start,flex-start,null);
+        .product{
+            width: 25%;
+        }
+        a{
+            width: 100% !important;
+        }
+    }
+}

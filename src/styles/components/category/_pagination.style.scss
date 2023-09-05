@@ -1,0 +1,31 @@
+.category__pagination{
+    margin-bottom: 50px;
+    @include flex(row,space-between,center,null);
+    button{
+        padding:5px 10px;
+        border-radius: 10px;
+        border:1px solid lightgray;
+        background-color: #f1f1f1;
+        @include flex(row,space-between,center,null);
+        svg{
+            margin:0px 5px;
+        }
+        p{
+            font-weight: bold;
+        }
+    }
+    &-pages{
+        @include flex(row,space-between,center,null);
+        div{
+            width: calc(100% / 7 - 20px);
+            margin: 0px 10px;
+            width: 30px;
+            height: 30px;
+            border-radius: 5px;
+            @include flex(row,center,center,null);
+            &.active{
+                background-color: lightgray;
+            }
+        }
+    }
+}

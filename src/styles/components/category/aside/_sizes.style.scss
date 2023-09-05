@@ -1,0 +1,14 @@
+.category__sizes{
+    @include flex(row,flex-start,center,wrap);
+    &-nav{
+        @include flex(row,space-between,center,null);
+    }
+}
+.category__size{
+    width: fit-content;
+    background-color: #f1f1f1;
+    color:grey;
+    padding:10px;
+    margin:10px;
+    border-radius: 25px;
+}

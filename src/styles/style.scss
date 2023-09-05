@@ -29,6 +29,21 @@
 @import './components/details/tabs/tabs-wrapper.style';
 @import './components/details/tabs/tabs.style';
 
+@import './components/category/aside/categories.style';
+@import './components/category/aside/colors.style';
+@import './components/category/aside/dress.style';
+@import './components/category/aside/filters.style';
+@import './components/category/aside/price-slider.style';
+@import './components/category/aside/sizes.style';
+@import './components/category/aside/aside.style';
+@import './components/category/products.style';
+@import './components/category/pagination.style';
+
+@import './components/cart/item.style';
+@import './components/cart/summary.style';
+
 @import './pages/home.style';
+@import './pages/category.style';
+@import './pages/cart.style';
 
 @import './page-templates/details.style.scss';

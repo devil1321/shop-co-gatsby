@@ -1,0 +1,22 @@
+.cart{
+    padding:0px 50px;
+    @include breakpoint-down(small){
+        padding: 0px 10px;
+    }
+    &__inner-wrapper{
+        @include flex(row,space-between,flex-start,null);
+        margin-bottom: 50px;
+        @include breakpoint-down(small){
+            display: block;
+        }
+    }
+    &__items{
+        width: 60%;
+        padding:10px;
+        border:1px solid lightgray;
+        border-radius: 10px;
+        @include breakpoint-down(small){
+            width: 100%;
+        }
+    }
+}

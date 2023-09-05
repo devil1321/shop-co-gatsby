@@ -1,5 +1,28 @@
 .details__images{
     width: 50%;
     @include flex(row,space-between,center,null);
-    
+    @include breakpoint-down(small){
+        width: 100%;
+        @include flex(column,center,center,null);
+    }
+    &-imgs{
+        @include  breakpoint-down(small){
+            order: 2;
+            margin-top: 20px;
+            @include flex(row,space-between,center,null);
+            div{
+                width: 120px;
+                height: 120px;
+            }
+            img{
+                width: 90%;
+            }
+        }
+    }
+    &-main-img{
+        @include breakpoint-down(small){
+            width: 100%;
+        }
+    }
+
 }
