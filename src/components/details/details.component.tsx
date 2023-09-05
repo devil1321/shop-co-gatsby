@@ -51,9 +51,11 @@ const Details:React.FC<DetailsProps> = ({product}) => {
     e.target.classList.add('active')
   }
   const handleSizes = (e:any) => {
-    const sizes = document.querySelectorAll('.details__info-size')
-    sizes.forEach(s => s.classList.remove('active'))
-    e.target.classList.add('active')
+    if(typeof window !== undefined){
+      const sizes = document.querySelectorAll('.details__info-size')
+      sizes.forEach(s => s.classList.remove('active'))
+      e.target.classList.add('active')
+    }
   }
 
   useEffect(()=>{
