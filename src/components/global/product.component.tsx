@@ -31,13 +31,13 @@ const Product:React.FC<ProductProps> = ({id,imgName,title,rating,price,prevPrice
         if(r % 1 === 0){
             return <FontAwesomeIcon icon={faStar} />
         }else if(r % rating === 0){
-            const step = 20
-            const product = document.querySelector(`#product-${id}`) as HTMLDivElement
-            const mask = product?.querySelector('.product__rating-mask') as HTMLDivElement
-            if(mask){
-                mask.style.left = step * r + 'px'
-            }
-            return <FontAwesomeIcon icon={faStar} />
+            // const step = 20
+            // const product = document.querySelector(`#product-${id}`) as HTMLDivElement
+            // const mask = product?.querySelector('.product__rating-mask') as HTMLDivElement
+            // if(mask){
+            //     mask.style.left = step * r + 'px'
+            // }
+            // return <FontAwesomeIcon icon={faStar} />
         }
     })
   }
