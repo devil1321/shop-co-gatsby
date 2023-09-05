@@ -36,13 +36,13 @@ const Nav = () => {
           <FontAwesomeIcon icon={faChevronDown} />
         </div>
         <div className="nav__menu-item">
-          <Link to="#">On Sale</Link>
+          <Link to="/products">On Sale</Link>
         </div>
         <div className="nav__menu-item">
-          <Link to="#">New Arrivals</Link>
+          <Link to="/products">New Arrivals</Link>
         </div>
         <div className="nav__menu-item">
-          <Link to="#">Brands</Link>
+          <Link to="/products">Brands</Link>
         </div>
       </div>
       <div className="nav__search" ref={searchRef}>
