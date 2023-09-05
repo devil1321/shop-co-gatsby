@@ -28,12 +28,14 @@ const Review:React.FC<ReviewProps> = ({id,rating,title,content,footer}) => {
         }else if(r % rating === 0){
             const step = 20
             if(typeof window !== undefined){
-              const product = document.querySelector(`#details__review-${id}`) as HTMLDivElement
-              const mask = product?.querySelector('.details__review-rating-mask') as HTMLDivElement
-              if(mask){
-                mask.style.left = step * r + - 9 + 'px'
+              if(document){
+                const product = document.querySelector(`#details__review-${id}`) as HTMLDivElement
+                const mask = product?.querySelector('.details__review-rating-mask') as HTMLDivElement
+                if(mask){
+                  mask.style.left = step * r + - 9 + 'px'
+                }
+                return <FontAwesomeIcon icon={faStar} />
               }
-              return <FontAwesomeIcon icon={faStar} />
             }
         }
     })

@@ -36,12 +36,14 @@ const Details:React.FC<DetailsProps> = ({product}) => {
         }else if(r % rating === 0){
             const step = 20
             if(typeof window !== undefined){
-              const product = document.querySelector(`#details-${id}`) as HTMLDivElement
-              const mask = product?.querySelector('.details__info-rating-mask') as HTMLDivElement
-              if(mask){
-                mask.style.left = step * r + - 9 + 'px'
+              if(document){
+                const product = document.querySelector(`#details-${id}`) as HTMLDivElement
+                const mask = product?.querySelector('.details__info-rating-mask') as HTMLDivElement
+                if(mask){
+                  mask.style.left = step * r + - 9 + 'px'
+                }
+                return <FontAwesomeIcon icon={faStar} />
               }
-              return <FontAwesomeIcon icon={faStar} />
             }
         }
     })
@@ -54,9 +56,11 @@ const Details:React.FC<DetailsProps> = ({product}) => {
   }
   const handleSizes = (e:any) => {
     if(typeof window !== undefined){
-      const sizes = document.querySelectorAll('.details__info-size')
-      sizes.forEach(s => s.classList.remove('active'))
-      e.target.classList.add('active')
+      if(document){
+        const sizes = document.querySelectorAll('.details__info-size')
+        sizes.forEach(s => s.classList.remove('active'))
+        e.target.classList.add('active')
+      }
     }
   }
 
