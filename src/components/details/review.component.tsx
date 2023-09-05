@@ -27,16 +27,16 @@ const Review:React.FC<ReviewProps> = ({id,rating,title,content,footer}) => {
             return <FontAwesomeIcon icon={faStar} />
         }else if(r % rating === 0){
             const step = 20
-            if(typeof window !== undefined){
-              if(document){
-                const product = document.querySelector(`#details__review-${id}`) as HTMLDivElement
-                const mask = product?.querySelector('.details__review-rating-mask') as HTMLDivElement
-                if(mask){
-                  mask.style.left = step * r + - 9 + 'px'
-                }
-                return <FontAwesomeIcon icon={faStar} />
-              }
-            }
+            // if(typeof window !== undefined){
+            //   if(document){
+            //     const product = document.querySelector(`#details__review-${id}`) as HTMLDivElement
+            //     const mask = product?.querySelector('.details__review-rating-mask') as HTMLDivElement
+            //     if(mask){
+            //       mask.style.left = step * r + - 9 + 'px'
+            //     }
+            //     return <FontAwesomeIcon icon={faStar} />
+            //   }
+            // }
         }
     })
   }
