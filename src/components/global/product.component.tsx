@@ -1,21 +1,35 @@
-import React, { MutableRefObject, useRef, useState } from 'react'
+import React from 'react'
+import { Link } from 'gatsby'
 import useImage from '../../hooks/useImage';
 import { GatsbyImage } from 'gatsby-plugin-image';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faStar } from '@fortawesome/free-solid-svg-icons';
+import { useDispatch,useSelector } from 'react-redux';
+import { bindActionCreators } from 'redux';
+import { State } from '../../controller/reducers/root.reducer';
+import * as ShopActions from '../../controller/action-creators/shop.action-creators'
 
 interface ProductProps{
+  product:{
     id:number;
-    imgName:string;
-    title:string;
+    img_name:string;
+    name:string;
     rating:number;
     price:number;
-    prevPrice:number;
+    prev_price:number;
+    inCart:boolean;
+  }
 }
 
-const Product:React.FC<ProductProps> = ({id,imgName,title,rating,price,prevPrice}) => {
+const Product:React.FC<ProductProps> = ({product}) => {
 
-  const [image,setImage] = useImage(imgName)
+  const { id,img_name,name,rating,price,prev_price,inCart } = product
+  const { cart,products } = useSelector((state:State) => state.shop)
+
+  const dispatch = useDispatch()
+  const shopActions = bindActionCreators(ShopActions,dispatch)
+
+  const [image,setImage] = useImage(img_name)
 
   const handleRating = () =>{
     let tmp = []
@@ -46,15 +60,18 @@ const Product:React.FC<ProductProps> = ({id,imgName,title,rating,price,prevPrice
     <div className='product' id={'product-' + id}>
       <div className="product__img">
       {/* @ts-ignore */}
-        {image && <GatsbyImage image={image.childImageSharp.gatsbyImageData} alt="product" />}
+        {image && <Link to={`/details/${id}`}><GatsbyImage image={image.childImageSharp.gatsbyImageData} alt="product" /></Link>}
+        {inCart 
+        ?  <div style={{backgroundColor:'yellowgreen'}} className="product__in-cart">IN CART</div>
+        :  <div style={{backgroundColor:'orange'}} className="product__in-cart" onClick={()=>shopActions.handleAddToCart(id,cart,products)}>BUY</div>}
       </div>
-      <h3>{title}</h3>
+      <h3>{name}</h3>
       <div className='product__rating'>
         <div className="product__rating-mask"></div>
         {handleRating()}
         <span>{rating} / 5</span>
       </div>
-      <h3>${price} {prevPrice !== 0 && '/ $' + prevPrice}</h3>
+      <h3>${price} {prev_price !== 0 && '/ $' + prev_price}</h3>
     </div>
   )
 }

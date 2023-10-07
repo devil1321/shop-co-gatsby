@@ -2,7 +2,21 @@
     width: 80%;
     box-sizing: border-box;
     padding: 20px;
+    @include breakpoint-down(small){
+        width: 100%;
+    }
     &-header{
+        h3{
+            @include breakpoint-down(small){
+                font-size: pxToRem(16);
+            }
+        }
+        p{
+            @include breakpoint-down(small){
+                font-size: pxToRem(12);
+                margin-left: 10px;
+            }
+        }
         @include flex(row,space-between,center,null);
         &-text{
             margin-left: auto;

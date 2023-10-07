@@ -6,6 +6,19 @@ import Sizes from './sizes.component'
 import DressStyle from './dress-style.component'
 
 const Aside = () => {
+
+  const handleAside = () =>{
+    const aside = document.querySelector('.category__aside') as HTMLDivElement
+    if(!aside?.classList.contains('aside--open')){
+      aside.style.display = 'block'
+      aside.classList.add('aside--open')
+    }else{
+      aside.style.display = 'none'
+      aside.classList.remove('aside--open')
+    }
+  }
+
+
   return (
     <div className='category__aside'>
       <div className="catergory__aside-nav">
@@ -21,7 +34,7 @@ const Aside = () => {
       <Colors />
       <Sizes />
       <DressStyle />
-      <button>Apply Filter</button>
+      <button onClick={()=>handleAside()}>Apply Filter</button>
     </div>
   )
 }

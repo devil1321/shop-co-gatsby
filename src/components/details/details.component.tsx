@@ -1,6 +1,10 @@
 import { faCheck, faMinus, faPlus, faStar } from '@fortawesome/free-solid-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import React, { useEffect, useState } from 'react'
+import { useSelector, useDispatch } from 'react-redux';
+import { State } from '../../controller/reducers/root.reducer';
+import { bindActionCreators } from 'redux';
+import * as ShopActions from '../../controller/action-creators/shop.action-creators'
 
 interface DetailsProps{
   product:{
@@ -11,14 +15,30 @@ interface DetailsProps{
     rating:number;
     price:number;
     prevPrice:number;
+    inCart:boolean;
+    quantity:number;
   }
 }
 
 const Details:React.FC<DetailsProps> = ({product}) => {
+  
+  
+  const [item,setItem] = useState<any>(product);
+  
+  const [quantity,setQuantity] = useState<number>(product.quantity)
 
-  const { id, name, img_name, img_src, rating, price, prev_price } = product
+  if(product && item?.id){
+    var { id, name, rating, price, prev_price, inCart } = item
+  }
+  const { products, cart } = useSelector((state:State) => state.shop)
 
-  const [quantity,setQuantity] = useState<number>(1)
+  const dispatch = useDispatch()
+  const shopActions = bindActionCreators(ShopActions,dispatch)
+
+  const handleProduct = () =>{
+    const item = products.find((p:any) => p.id === id)
+    setItem(item)
+  }
 
   const handleRating = () =>{
     let tmp = []
@@ -66,10 +86,13 @@ const Details:React.FC<DetailsProps> = ({product}) => {
 
   useEffect(()=>{
     handleRating()
-    if(quantity < 1){
-      setQuantity(1)
+    handleProduct()
+    if(quantity < 0){
+      setQuantity(0)
+    }else{
+      shopActions.handleChangeCartQuantity(id,quantity,cart,products)
     }
-  },[quantity])
+  },[quantity,products])
   return (
     <div className='details__info' id={`details-${id}`}>
       <h2>{name}</h2>
@@ -110,7 +133,12 @@ const Details:React.FC<DetailsProps> = ({product}) => {
             <FontAwesomeIcon icon={faPlus} onClick={()=>setQuantity(quantity + 1)}/>
           </div>
         </div>
-        <button className="details__info-btn">Add to cart</button>
+        {!inCart
+          ? <button className="details__info-btn" onClick={()=>{
+            shopActions.handleAddToCart(id,cart,products)
+            setQuantity(1)
+          }}>Add to cart</button>
+          : <button style={{backgroundColor:'yellowgreen'}} className="details__info-btn">In cart</button>}
       </div>
     </div>
   )

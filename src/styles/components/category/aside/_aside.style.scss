@@ -3,6 +3,16 @@
     padding:20px;
     border-radius: 25px;
     border: 1px solid lightgray;
+    @include breakpoint-down(small){
+        display: none;
+        width: 80%;
+        position: absolute;
+        top:50px;
+        left:50%;
+        z-index: 2;
+        background-color: white;
+        transform:translateX(-50%);
+    }
     &-aside-nav{
         @include flex(row,space-between,center,null);
     }

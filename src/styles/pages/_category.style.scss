@@ -1,9 +1,18 @@
 .category{
     padding: 0px 50px;
+    @include breakpoint-down(small){
+        padding: 0px 10px;
+    }
     &__inner-wrapper{
         @include flex(row,flex-start,flex-start,null);
+        @include breakpoint-down(small){
+            display: block;
+        }
         .product{
             width: 25%;
+            @include breakpoint-down(small){
+                width: 100%;
+            }
         }
         a{
             width: 100% !important;

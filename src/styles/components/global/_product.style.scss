@@ -1,6 +1,16 @@
 .product{
     width: calc(25% - 40px);
     margin:20px;
+    position: relative;
+    top:0px;
+    left:0px;
+    overflow: hidden;
+    cursor: pointer;
+    &:hover{
+        .product__in-cart{
+            transform: translateX(0%);
+        }
+    }
     @include breakpoint-down(small){
         width: calc(50% - 40px);
         h3{
@@ -16,7 +26,7 @@
     &__img{
         overflow: hidden;
         border-radius: 25px;
-        height: 300px;
+        height: 200px;
     }
     svg{
         width: 20px;
@@ -46,5 +56,17 @@
         background-color: white;
         width: 10px;
         height: 20px;
+    }
+    &__in-cart{
+        position: absolute;
+        top:100px;
+        right:0px;
+        padding: 10px 20px;
+        border-top-left-radius: 10px;
+        border-bottom-left-radius: 10px;
+        font-weight: bold;
+        font-style: italic;
+        transform: translateX(100%);
+        transition: all 0.5s ease-in-out;
     }
 }
