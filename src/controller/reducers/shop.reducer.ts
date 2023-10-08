@@ -30,12 +30,6 @@ export default (state = initData,action:Action) =>{
                 ...state,
                 cart:action.cart
             }
-        case ShopTypes.HANDLE_CLEAR_CART:
-            return {
-                ...state,
-                cart:action.cart,
-                summary:action.summary
-            }
         case ShopTypes.HANDLE_SUMMARY:
             return {
                 ...state,

@@ -29,20 +29,24 @@ const Nav = () => {
   return (
     <div className='nav'>
       <FontAwesomeIcon icon={faHamburger} className='nav__hamburger' onClick={()=>handleMenu()}/>
-      <h1 className="nav__logo">SHOP.CO</h1>
+      <Link to="/">
+        <h1 className="nav__logo">SHOP.CO</h1>
+      </Link>
       <div className="nav__menu" ref={menuRef}>
         <div className="nav__menu-item">
-          <div>Shop</div>
+          <Link to="/">
+            <div>Shop</div>
+          </Link>
           <FontAwesomeIcon icon={faChevronDown} />
         </div>
         <div className="nav__menu-item">
-          <Link to="/products">On Sale</Link>
+          <Link to="/category">On Sale</Link>
         </div>
         <div className="nav__menu-item">
-          <Link to="/products">New Arrivals</Link>
+          <Link to="/category">New Arrivals</Link>
         </div>
         <div className="nav__menu-item">
-          <Link to="/products">Brands</Link>
+          <Link to="/category">Brands</Link>
         </div>
       </div>
       <div className="nav__search" ref={searchRef}>
@@ -54,7 +58,9 @@ const Nav = () => {
       </div>
       <div className="nav__menu-icons">
         <FontAwesomeIcon icon={faSearch} className='nav__search-icon' onClick={()=>handleSearchOpen()} />
-        <FontAwesomeIcon icon={faShoppingBag} />
+        <Link to="/cart">
+          <FontAwesomeIcon icon={faShoppingBag} />
+        </Link>
         <FontAwesomeIcon icon={faPerson} />
       </div>
     </div>

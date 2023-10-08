@@ -12,8 +12,6 @@
     }
     &__items{
         width: 60%;
-        padding:10px;
-        border:1px solid lightgray;
         border-radius: 10px;
         @include breakpoint-down(small){
             width: 100%;

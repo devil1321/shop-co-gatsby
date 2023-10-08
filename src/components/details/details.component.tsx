@@ -7,28 +7,18 @@ import { bindActionCreators } from 'redux';
 import * as ShopActions from '../../controller/action-creators/shop.action-creators'
 
 interface DetailsProps{
-  product:{
-    id:number;
-    name:string;
-    img_name:string;
-    img_src:string;
-    rating:number;
-    price:number;
-    prevPrice:number;
-    inCart:boolean;
-    quantity:number;
-  }
+  id:number;
 }
 
-const Details:React.FC<DetailsProps> = ({product}) => {
+const Details:React.FC<DetailsProps> = ({id}) => {
   
   
-  const [item,setItem] = useState<any>(product);
+  const [item,setItem] = useState<any>(null);
   
-  const [quantity,setQuantity] = useState<number>(product.quantity)
+  const [quantity,setQuantity] = useState<number>(0)
 
-  if(product && item?.id){
-    var { id, name, rating, price, prev_price, inCart } = item
+  if(item?.id){
+    var { id:itemId, name, rating, price, prev_price, inCart } = item
   }
   const { products, cart } = useSelector((state:State) => state.shop)
 
@@ -84,15 +74,26 @@ const Details:React.FC<DetailsProps> = ({product}) => {
     // }
   }
 
-  useEffect(()=>{
-    handleRating()
-    handleProduct()
+  const handleSetQuantity = () =>{
+    if(item?.id && quantity === 0){
+      setQuantity(1)
+      shopActions.handleChangeCartQuantity(id,quantity,cart,products)
+    }
+  }
+  const handleChangeQuantity = () =>{
     if(quantity < 0){
       setQuantity(0)
     }else{
       shopActions.handleChangeCartQuantity(id,quantity,cart,products)
     }
-  },[quantity,products])
+  }
+
+  useEffect(()=>{
+    handleRating()
+    handleProduct()
+    handleSetQuantity()
+    handleChangeQuantity()
+  },[quantity,products,item])
   return (
     <div className='details__info' id={`details-${id}`}>
       <h2>{name}</h2>

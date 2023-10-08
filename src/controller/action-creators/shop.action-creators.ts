@@ -43,30 +43,25 @@ export const handleRemoveFromCart = (id:number,cart:any,products:any) => (dispat
     })
 }
 export const handleChangeCartQuantity = (id:number,quantity:number,cart:any,products:any) => (dispatch:Dispatch) => {
+    console.log(id)
     let tmpCart = cart
-    const item = products.find((item:any) => item.id == id)
+    const item = products.find((item:any) => item.id === id)
     if(item){
         item.quantity = quantity
         if(quantity < 1){
-            tmpCart = tmpCart.filter((i:any) => i.id !== id)
+            cart = cart.filter((p:any) => p.id !== id)
             item.inCart = false
         }
-        if(item.quantity > 0){
+        if(item.quantity > 0 && !item.inCart){
             cart.push(item)
             item.inCart = true
         }
+        tmpCart = products
         dispatch({
             type:ShopTypes.HANDLE_CHANGE_CART_QUANTITY,
             cart:tmpCart
         })
     }
-}
-export const handleClearCart = (cart:any) => (dispatch:Dispatch) => {
-    dispatch({
-        type:ShopTypes.HANDLE_CLEAR_CART,
-        cart:[],
-        summary:0,
-    })
 }
 export const handleSummary = (cart:any) => (dispatch:Dispatch) => {
     let summary = 0
@@ -74,6 +69,9 @@ export const handleSummary = (cart:any) => (dispatch:Dispatch) => {
         const innerSummary = i.quantity * i.price
         summary += innerSummary
     })
+    if(summary < 0){
+        summary = 0
+    }
     dispatch({
         type:ShopTypes.HANDLE_SUMMARY,
         summary:summary
