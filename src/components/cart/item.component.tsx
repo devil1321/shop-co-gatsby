@@ -53,13 +53,19 @@ const Item:React.FC<ItemProps> = ({id,imgName,title,size,color,price,quantity}) 
                 <h3>${price}</h3>
                 <div className="cart__item-quantity">
                     <div onClick={()=>{
-                        setQuan(quan - 1)
-                        shopActions.handleChangeCartQuantity(id,quan,cart,products)
+                         setQuan(prevQuan => {
+                            const newQuan = prevQuan - 1;
+                            shopActions.handleChangeCartQuantity(id, newQuan, cart, products);
+                            return newQuan;
+                        });
                     }}>-</div>
                     <div>{quan}</div>
                     <div onClick={()=>{
-                        setQuan(quan + 1)
-                        shopActions.handleChangeCartQuantity(id,quan,cart,products)
+                         setQuan(prevQuan => {
+                            const newQuan = prevQuan + 1;
+                            shopActions.handleChangeCartQuantity(id, newQuan, cart, products);
+                            return newQuan;
+                        });
                     }}>+</div>
                 </div>
             </div>

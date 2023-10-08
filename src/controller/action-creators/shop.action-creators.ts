@@ -43,7 +43,6 @@ export const handleRemoveFromCart = (id:number,cart:any,products:any) => (dispat
     })
 }
 export const handleChangeCartQuantity = (id:number,quantity:number,cart:any,products:any) => (dispatch:Dispatch) => {
-    console.log(id)
     let tmpCart = cart
     const item = products.find((item:any) => item.id === id)
     if(item){
@@ -53,7 +52,7 @@ export const handleChangeCartQuantity = (id:number,quantity:number,cart:any,prod
             item.inCart = false
         }
         if(item.quantity > 0 && !item.inCart){
-            cart.push(item)
+            cart = [...cart,item]
             item.inCart = true
         }
         tmpCart = products
