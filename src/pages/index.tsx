@@ -2,8 +2,19 @@ import * as React from "react"
 import { GlobalComponents } from "../components/global"
 import { HomeComponents } from "../components/home"
 import { products } from '../products-context'
+import { useDispatch } from 'react-redux'
+import { bindActionCreators } from 'redux'
+import * as ShopActions from '../controller/action-creators/shop.action-creators'
 
-const IndexPage: React.FC = () => {
+const IndexPage:React.FC = () => {
+
+  const dispatch = useDispatch()
+  const shopActions = bindActionCreators(ShopActions,dispatch)
+
+  React.useEffect(()=>{
+    shopActions.handleSetProducts()
+  },[])
+
   return (
     <GlobalComponents.Layout title="Home" className='home' meta={[]}>
       <HomeComponents.Hero />

@@ -37,7 +37,7 @@ const Item:React.FC<ItemProps> = ({id,imgName,title,size,color,price,quantity}) 
   return (
     <div className='cart__item'>
         <div className="cart__item-img">
-            {image && <GatsbyImage image={image.childImageSharp.gatsbyImageData} alt={image.name} />}
+            {image && <GatsbyImage image={image[0].gatsbyImageData} alt={image.name} />}
         </div>
         <div className="cart__item-info">
             <div className="cart__item-info-header">
@@ -56,6 +56,7 @@ const Item:React.FC<ItemProps> = ({id,imgName,title,size,color,price,quantity}) 
                          setQuan(prevQuan => {
                             const newQuan = prevQuan - 1;
                             shopActions.handleChangeCartQuantity(id, newQuan, cart, products);
+                            shopActions.handleSummary(cart)
                             return newQuan;
                         });
                     }}>-</div>
@@ -64,6 +65,7 @@ const Item:React.FC<ItemProps> = ({id,imgName,title,size,color,price,quantity}) 
                          setQuan(prevQuan => {
                             const newQuan = prevQuan + 1;
                             shopActions.handleChangeCartQuantity(id, newQuan, cart, products);
+                            shopActions.handleSummary(cart)
                             return newQuan;
                         });
                     }}>+</div>

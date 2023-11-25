@@ -26,7 +26,7 @@ const Details:React.FC<DetailsProps> = ({id}) => {
   const shopActions = bindActionCreators(ShopActions,dispatch)
 
   const handleProduct = () =>{
-    const item = products.find((p:any) => p.id === id)
+    const item = products?.find((p:any) => p.id === id)
     setItem(item)
   }
 

@@ -1,8 +1,8 @@
 import { ShopTypes } from '../types'
 // @ts-ignore
-import { products } from '../../products-context'
 import { Dispatch } from 'redux'
 import store from '../store'
+import { products } from '../../products-context'
 
 export const handleSetProducts = () => (dispatch:Dispatch) => {
     dispatch({
@@ -10,7 +10,7 @@ export const handleSetProducts = () => (dispatch:Dispatch) => {
         products:products
     })
 }
-export const handleSetCart = () => (dispatch:Dispatch) => {
+export const handleSetCart = (products:any) => (dispatch:Dispatch) => {
     dispatch({
         type:ShopTypes.HANDLE_SET_CART,
         cart:products

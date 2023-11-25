@@ -19,6 +19,9 @@
         overflow: hidden;
         height: 220px;
         border-radius: 25px;
+        img{
+            width: 100%;
+        }
         @include breakpoint-down(small){
             height: 100px;
         }

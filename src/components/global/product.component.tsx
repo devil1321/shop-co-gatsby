@@ -60,7 +60,7 @@ const Product:React.FC<ProductProps> = ({product}) => {
     <div className='product' id={'product-' + id}>
       <div className="product__img">
       {/* @ts-ignore */}
-        {image && <Link to={`/details/${id}`}><GatsbyImage image={image.childImageSharp.gatsbyImageData} alt="product" /></Link>}
+        {image && <Link to={`/details/${id}`}><GatsbyImage image={image[0].gatsbyImageData} alt="product" /></Link>}
         {inCart 
         ?  <div style={{backgroundColor:'yellowgreen'}} className="product__in-cart">IN CART</div>
         :  <div style={{backgroundColor:'orange'}} className="product__in-cart" onClick={()=>shopActions.handleAddToCart(id,cart,products)}>BUY</div>}

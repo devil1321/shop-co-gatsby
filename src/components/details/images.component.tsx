@@ -19,17 +19,17 @@ const Images = () => {
     <div className='details__images'>
       <div className="details__images-imgs">
         <div className="details__images-img"  onClick={()=>setActiveImage(details_1)} >
-          {details_1 && <GatsbyImage image={details_1.childImageSharp.gatsbyImageData} alt="details" />}
+          {details_1 && <GatsbyImage image={details_1[0].gatsbyImageData} alt="details" />}
         </div>
         <div className="details__images-img" onClick={()=>setActiveImage(details_2)} >
-          {details_3 && <GatsbyImage image={details_2.childImageSharp.gatsbyImageData} alt="details" />}
+          {details_3 && <GatsbyImage image={details_2[0].gatsbyImageData} alt="details" />}
         </div>
         <div className="details__images-img" onClick={()=>setActiveImage(details_3)} >
-          {details_2 && <GatsbyImage image={details_3.childImageSharp.gatsbyImageData} alt="details" />}
+          {details_2 && <GatsbyImage image={details_3[0].gatsbyImageData} alt="details" />}
         </div>
       </div>
       <div className="details__images-main-img">
-        {activeImg && <GatsbyImage image={activeImg.childImageSharp.gatsbyImageData} alt="details" />}
+        {activeImg && <GatsbyImage image={activeImg[0].gatsbyImageData} alt="details" />}
       </div>
     </div>
   )

@@ -17,7 +17,7 @@ const BrowseItem:React.FC<BrowseItemProps> = ({title,imgName,width}) => {
         <div className="home__browse-item-img">
             <h3>{title}</h3>
             {/* @ts-ignore */}
-            {image && <GatsbyImage image={image.childImageSharp.gatsbyImageData} alt="feature" />}
+            {image && <GatsbyImage image={image[1].gatsbyImageData} alt="feature" />}
         </div>
     </div>
   )

@@ -1,45 +1,32 @@
-import { graphql, useStaticQuery } from 'gatsby'
-import { IGatsbyImageData } from 'gatsby-plugin-image'
-import React, { useEffect, useState } from 'react'
-
-interface Image{
-    name:string;
-    childImageSharp:{
-      gatsbyImageData:IGatsbyImageData;
-    }
-  }
-  
-  interface Data {
-    allFile:{
-        nodes:Image[];
-    }
-  }
-  
+import * as React from "react"
+import { useStaticQuery, graphql } from "gatsby"
+import { useEffect, useState } from "react"
 
 const useImage = (name:string) => {
-  const [image,setImage] = useState<Image>()
 
-  const data:Data = useStaticQuery(graphql`
+  const [image,setImage] = useState<any>(null)
+
+  const data = useStaticQuery(graphql`
     query {
-      allFile {
+      allImageSharp {
         nodes {
-          childImageSharp {
-            gatsbyImageData(formats: WEBP, placeholder: BLURRED, layout: FULL_WIDTH)
+          gatsbyImageData(layout: FULL_WIDTH, placeholder: BLURRED)
+          original {
+            src
           }
-          name
         }
       }
     }
   `)
 
-  const handleImage = (name:string) =>{
-    const images = data.allFile.nodes 
-    const image = images.find((n:Image) => n.name === name)
+  const handleImage = () => {
+    const regex = new RegExp(`${name}`,'i')
+    const image = data.allImageSharp.nodes.filter((image:any) => regex.test(image.original.src))
     setImage(image)
   }
 
   useEffect(()=>{
-    handleImage(name)
+    handleImage()
   },[name])
 
   return [image,setImage]

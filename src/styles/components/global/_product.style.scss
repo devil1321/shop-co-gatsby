@@ -6,6 +6,9 @@
     left:0px;
     overflow: hidden;
     cursor: pointer;
+    h3,p{
+       text-align: center;
+    }
     &:hover{
         .product__in-cart{
             transform: translateX(0%);
@@ -34,6 +37,7 @@
         color:yellow;
     }
     &__rating{
+        text-align: center;
         position: relative;
         top:0px;
         left:0px;
@@ -61,6 +65,7 @@
         position: absolute;
         top:100px;
         right:0px;
+        z-index: 10;
         padding: 10px 20px;
         border-top-left-radius: 10px;
         border-bottom-left-radius: 10px;
